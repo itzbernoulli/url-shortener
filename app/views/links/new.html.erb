@@ -1,0 +1,26 @@
+
+<%= flash[:error] %>
+<%= form_with model: @link do |form| %>
+  <div class="row">
+      <div class="col-6">
+        <fieldset>
+              <div class="form-group">
+              <%= label_tag "Please input url you want to shorten" %>
+              <%= form.text_field :url , class: "form-control", placeholder: "Url"%>
+              </div>
+        </fieldset>
+      </div>
+    </div>
+
+      <div class="row">
+      <div class="col-6">
+        <fieldset>
+              <div class="form-group">
+              <%= label_tag "Choose a short or leave empty to fill automatically" %>
+              <%= form.text_field :slug , class: "form-control", placeholder: "Slug"%>
+              </div>
+        </fieldset>
+      </div>
+    </div>
+  <%= form.submit "Create Link", class: "btn btn-primary" %>
+<% end %>
