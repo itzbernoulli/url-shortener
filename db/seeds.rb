@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Link.delete_all
+
+p "******************"
+p "SEEDING IN PROGRESS"
+
+file_data = File.read("link.txt").split
+
+file_data.each do |data|
+    p '.'
+    link = Link.create(
+        url: data,
+        clicked: rand(1..1000)
+     )
+
+
+    ScraperJob.perform_now(link.id)
+
+end
+
+puts ""
+p "SEEDING COMPLETE"
+p "******************"
