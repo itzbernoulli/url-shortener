@@ -1,24 +1,40 @@
-# README
+# Coding Challenge Submission
+This is the submission of the coding challenge.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project uses:
 
-Things you may want to cover:
+* Ruby version - 2.7.0
 
-* Ruby version
+* Rails version - 6.0.3.4
 
-* System dependencies
+* External Gems integrated
+    * rspec for testing
+    * factorybot for test data stubbing
+    * faker to generate random user data and support requests
 
-* Configuration
+* Packages included with webpack
+    * bootstrap
+    * bootswatch
 
-* Database creation
 
-* Database initialization
+### Installation procedure
+1. clone the project from the Github repo
 
-* How to run the test suite
+2. cd into the folder
 
-* Services (job queues, cache servers, search engines, etc.)
+3. run `bundle install` to install all dependencies
 
-* Deployment instructions
+4. run `yarn install` to install all webpack packages
 
-* ...
+5. run `rails databaseoperation:setup` to create, migrate and seed the database, 
+
+5. run `bin/rails spec` to verify all tests pass
+
+6. run `rails s` and take it for a spin.
+
+
+
+
+
+
+
