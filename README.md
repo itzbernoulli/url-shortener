@@ -1,6 +1,10 @@
 # Coding Challenge Submission
 This is the submission of the coding challenge.
 
+This app is hosted on heroku
+
+[LINK](http://thinly.herokuapp.com/)
+
 This project uses:
 
 * Ruby version - 2.7.0
@@ -37,6 +41,7 @@ This project uses:
 ###ASSUMPTIONS
 
 1. Allow for shortest possible URL by allowing user input their preferred URL which is validated to ensure uniqueness.
+
 
 
 
