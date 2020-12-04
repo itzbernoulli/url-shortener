@@ -1,8 +1,6 @@
 
 <h2>TOP 100 BOARD</h2>
-<br/>
-<%= link_to 'Create another link', new_link_path %>
-<br/>
+
 <%= link_to 'Back Home', root_path %>
 <br/>
 <table class="table table-hover">
@@ -24,7 +22,7 @@
       <th scope="row"> <%= serial += 1 %></th>
       <td><%= link.title %></td>
       <td><%= link.url %></td>
-      <td><%= link_to "http://localhost:3000/" +link.slug , "http://localhost:3000/"  +link.slug %></td>
+      <td><%= link_to "http://thinly.herokuapp.com/" +link.slug , "http://thinly.herokuapp.com/"  +link.slug %></td>
        <td><%= link.clicked %></td>
     </tr>
     <% end %>
