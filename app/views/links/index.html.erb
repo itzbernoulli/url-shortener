@@ -6,8 +6,8 @@
       <div class="col-6">
         <fieldset>
               <div class="form-group">
-              <%= label_tag "Please input url you want to shorten" %>
-              <%= form.text_field :url , class: "form-control", placeholder: "Url"%>
+              <%= label_tag "Please input url you want to shorten(must contain http:// or https://)" %>
+              <%= form.text_field :url , class: "form-control", placeholder: "http://www.heroku.com"%>
               </div>
         </fieldset>
       </div>
@@ -43,7 +43,7 @@
   </thead>
 
   <tbody id="links">
-      <%= render @links%>
+      <%= render @links %>
   </tbody>
 </table>
 <div class="digg_pagination">

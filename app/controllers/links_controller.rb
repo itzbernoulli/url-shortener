@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+
     def index
         @links = Link.order(created_at: :desc).paginate(page: params[:page], per_page: 30)
         @link = Link.new
@@ -21,6 +22,7 @@ class LinksController < ApplicationController
                 format.js
             else
                 flash[:error] = @link.errors.full_messages
+                @links = get_links
                 format.html { render :index }
             end
         end
@@ -37,5 +39,9 @@ class LinksController < ApplicationController
 
     def link_params
         params.require(:link).permit(:url, :slug)
+    end
+
+    def get_links
+        @links = Link.order(created_at: :desc).paginate(page: params[:page], per_page: 30)
     end
 end
