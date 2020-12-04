@@ -1,6 +1,7 @@
 class LinksController < ApplicationController
     def index
-        @links = Link.all.paginate(page: params[:page], per_page: 30)
+        @links = Link.order(created_at: :desc).paginate(page: params[:page], per_page: 30)
+        @link = Link.new
     end
 
     def best_hundred
@@ -13,13 +14,15 @@ class LinksController < ApplicationController
 
     def create
         @link = Link.new(link_params)
-        @link.url = @link.sanitize
-        if @link.save
-            ScraperJob.perform_later(@link.id)
-            redirect_to links_path
-        else
-            flash[:error] = @link.errors.full_messages
-            redirect_to new_link_path
+
+        respond_to do |format|
+            if @link.save
+                ScraperJob.perform_later(@link.id)
+                format.js
+            else
+                flash[:error] = @link.errors.full_messages
+                format.html { render :index }
+            end
         end
     end
 

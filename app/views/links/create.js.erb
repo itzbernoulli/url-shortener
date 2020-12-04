@@ -1,0 +1,10 @@
+var body = document.getElementById("links");
+body.innerHTML = "<%= j render @link %>" + body.innerHTML;
+
+var url_input = document.getElementById("link_url")
+var slug_input = document.getElementById("link_slug")
+
+url_input = '';
+slug_input = '';
+
+url_input.focus();
