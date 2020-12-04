@@ -17,7 +17,7 @@
   </thead>
 
   <tbody>
-    <% serial = ((params[:page] || 1).to_i - 1) * 10 %>
+    <% serial = ((params[:page] || 1).to_i - 1) * 20 %>
     <% @links.each do |link| %>
     <tr class="<%= cycle("table-active", "table-secondary") -%>">
 

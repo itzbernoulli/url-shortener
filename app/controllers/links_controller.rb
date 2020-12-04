@@ -4,7 +4,7 @@ class LinksController < ApplicationController
     end
 
     def best_hundred
-        @links = Link.order(clicked: :desc).limit(100).paginate(page: params[:page], per_page: 30)
+        @links = Link.order(clicked: :desc).paginate(page: params[:page], per_page: 20,total_entries: 100)
     end
 
     def new
