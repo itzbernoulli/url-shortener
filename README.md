@@ -11,6 +11,7 @@ This project uses:
     * rspec for testing
     * factorybot for test data stubbing
     * faker to generate random user data and support requests
+    * will_paginate to organise the list view
 
 * Packages included with webpack
     * bootstrap
@@ -31,6 +32,13 @@ This project uses:
 5. run `bin/rails spec` to verify all tests pass
 
 6. run `rails s` and take it for a spin.
+
+
+###ASSUMPTIONS
+
+1. Allow for shortest possible URL by allowing user input their preferred URL which is validated to ensure uniqueness.
+
+
 
 
 
