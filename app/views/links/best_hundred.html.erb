@@ -22,7 +22,7 @@
       <th scope="row"> <%= serial += 1 %></th>
       <td><%= link.title %></td>
       <td><%= link.url %></td>
-      <td><%= link_to "http://localhost:3000/" +link.slug , "http://localhost:3000/"  +link.slug %></td>
+      <td><%= link_to ENV['DOMAIN'] +link.slug , ENV['DOMAIN'] +link.slug %></td>
        <td><%= link.clicked %></td>
     </tr>
     <% end %>
