@@ -29,21 +29,23 @@ RSpec.describe Link, type: :model do
   end
 
   context 'sanitize url' do 
+    # let(:link) { build(:link, url: "   www.BOO.com   ")  }
     describe 'sanitize' do
-      let(:link) { build(:link, url: "   www.BOO.com   ")  }
+
+      before(:each) do
+        @link = build(:link, url: "   www.BOO.com   ")
+      end
+
       it 'should remove leading and trailing whitespaces' do
-        sanitized_link = link.sanitize
-        expect(sanitized_link).to eq("http://boo.com")
+        expect(@link.sanitize).to eq("http://boo.com")
       end
 
       it 'should convert all uppercase charaters to lowecase characters' do
-        sanitized_link = link.sanitize
-        expect(sanitized_link).to eq("http://boo.com")
+        expect(@link.sanitize).to eq("http://boo.com")
       end
 
       it 'should convert https and www prefix to http://' do
-        sanitized_link = link.sanitize
-        expect(sanitized_link).to eq("http://boo.com")
+        expect(@link.sanitize).to eq("http://boo.com")
       end
     end
   end
