@@ -23,7 +23,7 @@
       <th scope="row"> <%= serial += 1 %></th>
       <td><%= link.title %></td>
       <td><%= link.url %></td>
-      <td><%= link_to link.slug , "http://localhost:3000/" +link.slug %></td>
+      <td><%= link_to "https://thinly.herokuapp.com/"+link.slug , "https://thinly.herokuapp.com/" +link.slug %></td>
        <td><%= link.clicked %></td>
     </tr>
     <% end %>
