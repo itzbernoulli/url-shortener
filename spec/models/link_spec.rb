@@ -12,11 +12,11 @@ RSpec.describe Link, type: :model do
   context 'slug generation' do
     describe '#generate_slug' do
       it 'should return a value when slug is absent' do
-          link = build(:link, slug: nil)
+          link = build(:link, :nil_slug )
           expect(link.generate_slug).to be_truthy
       end
 
-      let(:link) { build(:link, slug: "feeble")  }
+      let(:link) { build(:link, :feeble_slug)  }
       
       it 'should return false when slug is present' do
         expect(link.generate_slug).to be_falsey
@@ -29,9 +29,9 @@ RSpec.describe Link, type: :model do
   end
 
     describe 'sanitize' do
-      build(:link, url: "   www.BOO.com   ")
+      let(:link) { build(:link, :malformed_url) }
       it 'malformed url is cleaned up' do
-        expect(@link.sanitize).to eq("http://boo.com")
+        expect(link.sanitize).to eq("http://boo.com")
       end
   end
 end
