@@ -2,6 +2,6 @@
     <tr class="<%= cycle("table-active", "table-secondary") -%>">
       <td><%= link.title.nil? ? "Loading..." : link.title  %></td>
       <td><%= link.url %></td>
-      <td><%= link_to ENV['DOMAIN']+ link.slug , ENV['DOMAIN'] +link.slug %></td>
+      <td><%= link_to link.shortened_url , link.shortened_url %></td>
        <td><%= link.clicked %></td>
     </tr>
