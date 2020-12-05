@@ -13,5 +13,6 @@ RSpec.feature "LinkLists", type: :feature do
     click_link "View top 100 Links"
     expect(page).to have_content("TOP 100 BOARD")
     expect(page).to have_content("Back Home")
+    expect(page).to have_content("100 in total")
   end
 end
