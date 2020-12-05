@@ -17,9 +17,10 @@
       <%= render @links %>
   </tbody>
 </table>
+
 <div class="digg_pagination">
-    <div class="page_info">
-      <%= page_entries_info @links %>
-    </div>
-    <%= will_paginate @links, :container => false %>
+  <div class="page_info">
+    <%= page_entries_info @links %>
   </div>
+  <%= will_paginate @links, :container => false %>
+</div>

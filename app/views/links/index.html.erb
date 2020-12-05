@@ -6,8 +6,8 @@
       <div class="col-6">
         <fieldset>
               <div class="form-group">
-              <%= label_tag "Please input url you want to shorten(must contain http:// or https://)" %>
-              <%= form.text_field :url , class: "form-control", placeholder: "http://www.heroku.com"%>
+                <%= label_tag "Please input url you want to shorten(must contain http:// or https://)" %>
+                <%= form.text_field :url , class: "form-control", placeholder: "http://www.heroku.com"%>
               </div>
         </fieldset>
       </div>
@@ -17,8 +17,8 @@
       <div class="col-6">
         <fieldset>
               <div class="form-group">
-              <%= label_tag "Choose a short or leave empty to fill automatically" %>
-              <%= form.text_field :slug , class: "form-control", placeholder: "Slug"%>
+                <%= label_tag "Choose a short or leave empty to fill automatically" %>
+                <%= form.text_field :slug , class: "form-control", placeholder: "Slug"%>
               </div>
         </fieldset>
       </div>
@@ -50,5 +50,6 @@
     <div class="page_info">
       <%= page_entries_info @links %>
     </div>
+    
     <%= will_paginate @links, :container => false %>
-  </div>
+</div>
