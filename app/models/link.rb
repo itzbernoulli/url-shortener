@@ -15,4 +15,8 @@ class Link < ApplicationRecord
         sanitize_url = self.url.downcase.gsub(/(https?:\/\/)|(www\.)/,"")
         "http://#{sanitize_url}"
     end
+
+    def shortened_url
+        ENV['DOMAIN'] + self.slug
+    end
 end
