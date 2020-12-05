@@ -15,7 +15,7 @@ class LinksController < ApplicationController
 
     def create
         @link = Link.new(link_params)
-
+        @link = @link.sanitize
         respond_to do |format|
             if @link.save
                 ScraperJob.perform_later(@link.id)
