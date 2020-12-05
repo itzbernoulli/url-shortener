@@ -6,7 +6,7 @@ FactoryBot.define do
     title { "Sample Title" }
 
     trait :malformed_url do
-      url { "   www.BOO.com   " }
+      url { "   http://www.BOO.com   " }
     end
 
     trait :nil_slug do
