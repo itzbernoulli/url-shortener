@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
 
     def index
-        @links = Link.order(created_at: :desc).paginate(page: params[:page], per_page: 30)
+        get_links
         @link = Link.new
     end
 
@@ -15,14 +15,14 @@ class LinksController < ApplicationController
 
     def create
         @link = Link.new(link_params)
-        @link = @link.sanitize
+        @link.url = @link.sanitize
         respond_to do |format|
             if @link.save
                 ScraperJob.perform_later(@link.id)
                 format.js
             else
                 flash[:error] = @link.errors.full_messages
-                @links = get_links
+                get_links
                 format.html { render :index }
             end
         end
