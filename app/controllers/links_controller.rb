@@ -17,7 +17,6 @@ class LinksController < ApplicationController
         @link = Link.new(link_params)
         respond_to do |format|
             if @link.save
-                ScraperJob.perform_later(@link.id)
                 format.js
             else
                 flash[:error] = @link.errors.full_messages
